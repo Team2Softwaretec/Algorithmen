@@ -8,7 +8,7 @@ import java.util.List;
  * Graph, der gerichtet oder ungerichtet sein kann.
  * Der Graph ist gewichtet. Falls keine Gewichte angegeben werden,
  * dann sind die Gewichte implizit auf 1 gesetzt.
- * Der Graph einthÃ¤lt keine Mehrfachkanten und keine Schleifen
+ * Der Graph einthält keine Mehrfachkanten und keine Schleifen
  * (Kanten von Knoten zu sich selbst).
  * @author Oliver Bittel
  * @since 21.10.2011
@@ -16,14 +16,14 @@ import java.util.List;
  */
 public interface Graph<V> {
     /**
-     * FÃ¼gt neuen Knoten zum Graph dazu.
+     * Fügt neuen Knoten zum Graph dazu.
      * @param v Knoten
      * @return true, falls Knoten noch nicht vorhanden war.
      */
     boolean addVertex(V v);
 
     /**
-     * FÃ¼gt neue Kante (mit Gewicht 1) zum Graph dazu.
+     * Fügt neue Kante (mit Gewicht 1) zum Graph dazu.
      * @param v Startknoten
      * @param w Zielknoten
      * @throws IllegalArgumentException falls einer der Knoten
@@ -33,7 +33,7 @@ public interface Graph<V> {
     boolean addEdge(V v, V w);
 
     /**
-     * FÃ¼gt neue Kante mit Gewicht weight zum Graph dazu.
+     * Fügt neue Kante mit Gewicht weight zum Graph dazu.
      * @param v Startknoten
      * @param w Zielknoten
      * @param weight Gewicht
@@ -44,14 +44,14 @@ public interface Graph<V> {
     boolean addEdge(V v, V w, double weight);
 
     /**
-     * PrÃ¼ft ob Knoten v im Graph vorhanden ist.
+     * Prüft ob Knoten v im Graph vorhanden ist.
      * @param v Knoten
      * @return true, falls Knoten vorhanden ist.
      */
     boolean containsVertex(V v);
 
     /**
-     * PrÃ¼ft ob Kante im Graph vorhanden ist.
+     * Prüft ob Kante im Graph vorhanden ist.
      * @param v Startknoten
      * @param w Endknoten
      * @throws IllegalArgumentException falls einer der Knoten
@@ -61,7 +61,7 @@ public interface Graph<V> {
     boolean containsEdge(V v, V w);
     
     /**
-     * Liefert Gewicht der Kante zurÃ¼ck.
+     * Liefert Gewicht der Kante zurück.
      * @param v Startknoten
      * @param w Endknoten
      * @throws IllegalArgumentException falls einer der Knoten
@@ -71,25 +71,25 @@ public interface Graph<V> {
     double getWeight(V v, V w);
 
     /**
-     * Liefert Anzahl der Knoten im Graph zurÃ¼ck.
+     * Liefert Anzahl der Knoten im Graph zurück.
      * @return Knotenzahl.
      */
     int getNumberOfVertexes();
 
     /**
-     * Liefert Anzahl der Kanten im Graph zurÃ¼ck.
+     * Liefert Anzahl der Kanten im Graph zurück.
      * @return Kantenzahl.
      */
     int getNumberOfEdges();
 
     /**
-     * Liefert Liste aller Knoten im Graph zurÃ¼ck.
+     * Liefert Liste aller Knoten im Graph zurück.
      * @return Knotenliste
      */
     List<V> getVertexList();
     
     /**
-     * Liefert Liste aller Kanten im Graph zurÃ¼ck.
+     * Liefert Liste aller Kanten im Graph zurück.
      * @return Kantenliste.
      */
     List<Edge<V>> getEdgeList();
