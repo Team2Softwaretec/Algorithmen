@@ -65,13 +65,7 @@ public class AdjacencyListUndirectedGraph <V> implements UndirectedGraph<V> {
 
 	@Override
 	public int getNumberOfEdges() {
-		int res = 0;
-		V v;
-		for() {
-			
-		}
-		// TODO Auto-generated method stub
-		return 0;
+		return adjacencyList.values().size() / 2;
 	}
 
 	@Override
@@ -84,27 +78,45 @@ public class AdjacencyListUndirectedGraph <V> implements UndirectedGraph<V> {
 	}
 
 	@Override
-	public List getEdgeList() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Edge<V>> getEdgeList() {
+		List<Edge<V>> res = new LinkedList<Edge<V>>();
+		for (V v : adjacencyList.keySet()) {
+			for (V w : adjacencyList.get(v).keySet()) {
+				Edge<V> e = new Edge<V>(v, w, adjacencyList.get(v).get(w));
+				if (!res.contains(e)) {
+					res.add(e);
+				}
+			}
+		}
+		return res;
 	}
 
 	@Override
-	public List getAdjacentVertexList(V v) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<V> getAdjacentVertexList(V v) {
+		List<V> res = new LinkedList<V>();
+		res.addAll(adjacencyList.get(v).keySet());
+		return res;
 	}
 
 	@Override
-	public List getIncidentEdgeList(V v) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Edge<V>> getIncidentEdgeList(V v) {
+		List<Edge<V>> res = new LinkedList<Edge<V>>();
+		if(!adjacencyList.containsKey(v)) {
+			throw new IllegalArgumentException("Knoten nicht vorhanden");
+		}
+		for(V w : adjacencyList.get(v).keySet()) {
+			Edge<V> e = new Edge<V>(v, w, adjacencyList.get(v).get(w));
+			res.add(e);
+		}
+		return res;
 	}
 
 	@Override
 	public int getDegree(V v) {
-		// TODO Auto-generated method stub
-		return 0;
+		if(!adjacencyList.containsKey(v)) {
+			throw new IllegalArgumentException("Knoten nicht vorhanden");
+		}
+		return getAdjacentVertexList(v).size();
 	}
 	
 	private void check(V v, V w) {
