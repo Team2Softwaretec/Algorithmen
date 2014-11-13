@@ -1,7 +1,7 @@
 // O. Bittel
 // 19.9.2011
 
-package Aufgabe1;
+package src;
 
 public interface Dictionary<K,V> {
     V insert(K key, V value);

@@ -1,4 +1,4 @@
-package Aufgabe1;
+package src;
  
  
 public class TreeDictionary<K extends Comparable<? super K>,V> implements Dictionary<K, V> {

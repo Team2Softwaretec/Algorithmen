@@ -1,4 +1,4 @@
-package Aufgabe1;
+package src;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 public final class SortedArrayDictionary<K extends Comparable<? super K>, V> implements Dictionary <K, V> {

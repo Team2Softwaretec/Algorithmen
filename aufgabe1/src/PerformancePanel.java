@@ -1,4 +1,4 @@
-package Aufgabe1;
+package src;
 
 import javax.swing.*;
 
